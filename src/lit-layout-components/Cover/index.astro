@@ -1,0 +1,28 @@
+---
+import type { RmUnitType } from '../Types';
+
+type Props = {
+  centeredElement?: string; // h1
+  space?: RmUnitType; //"var(--s1)"
+  minHeight?: RmUnitType; //"100vh"
+  noPad?: boolean; // false
+  children: unknown;
+};
+
+const { centeredElement: centered, ...rest } = Astro.props;
+---
+
+<cover-l centered={centered} {...rest}>
+  <slot />
+</cover-l>
+
+<script src="./Cover"></script>
+
+<style is:global>
+  cover-l {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100vh;
+    padding: '5px';
+  }
+</style>

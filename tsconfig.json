@@ -1,3 +1,40 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@wc/*": [
+        "src/lit-layout-components/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "**/*.mjs",
+    "**/*.ts",
+    "**/*.js",
+    "src/**/*.astro",
+    "postcss.config.mjs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
