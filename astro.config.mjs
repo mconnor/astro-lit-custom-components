@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import lit from '@astrojs/lit';
+import { dev } from 'astro';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +10,12 @@ export default defineConfig({
   site: 'http://localhost:4321',
 	vite: {
     ssr: {
-      noExternal: ['date-fns', 'open-props'],
+      noExternal: [ 'open-props'],
+    },
+    lit: {
+      // Enable the `lit-analyzer` plugin to provide diagnostics in the editor.
+      litAnalyzer: true,
+      dev
     },
   },
 });

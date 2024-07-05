@@ -1,26 +1,22 @@
 ---
-import GlobalStyle from '@styles/GlobalStyle.astro';
-import BaseHead from '@components/BaseHead.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import GlobalStyle from "@styles/GlobalStyle.astro";
+import BaseHead from "@components/BaseHead.astro";
+// import Header from "@components/Header.astro";
+// import Footer from "@components/Footer.astro";
 
-import { Cover } from '@wc/index.js';
+// import { Cover } from "@cc/index.js";
 
-type Props = {
+interface Props {
   pageTitle?: string;
   description?: string;
   image?: string;
   children: unknown;
-  // surfaceClass?: 'surface-1' | 'surface-2' | 'surface-3' | 'surface-4'
-};
-
-// const isProd = import.meta.env.PROD
-// const isDev = import.meta.env.DEV
+}
 
 const {
-  pageTitle = 'Mike Connor',
-  description = 'my description',
-  image = '/placeholder-social.jpg',
+  pageTitle = "Mike Connor",
+  description = "my description",
+  image = "/placeholder-social.jpg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -34,14 +30,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
 
   <body>
-    <Cover centered-element="main" noPad space="0">
-      <Header />
-
-      <main>
-        <slot />
-      </main>
-
-      <Footer />
-    </Cover>
+    <slot />
   </body>
 </html>

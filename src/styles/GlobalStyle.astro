@@ -1,47 +1,16 @@
 ---
-import 'open-props/postcss/style'
-import 'open-props/postcss/buttons'
-import 'open-props/postcss/normalize'
-import './variables.css'
-import './modular-scale.css'
+// import 'open-props/postcss/style'
+import "open-props/postcss/buttons";
+import "open-props/postcss/normalize";
+import "./variables.css";
+import "./modular-scale.css";
 ---
 
 <style is:global>
   html {
     font-family: var(--font-sans);
-    --brand: var(--brand-dark);
-    --text-1: var(--text-1-dark);
-    --text-2: var(--text-2-dark);
-    --surface-1: var(--surface-1-dark);
-    --surface-2: var(--surface-2-dark);
-    --surface-3: var(--surface-3-dark);
-    --surface-4: var(--surface-4-dark);
-    --surface-shadow: var(--surface-shadow-dark);
-    --shadow-strength: var(--shadow-strength-dark);
-  }
 
-  [class^='box'].invert {
-    filter: invert(100%);
-  }
-
-  [class^='box'] {
-    * {
-      color: inherit;
-      background-color: inherit;
-    }
-  }
-  .myLayoutColors {
-    background-color: var(--surface-3) !important;
-    color: var(--text-3) !important;
-  }
-  .gradient-text {
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  [color-scheme='light'] {
-    color-scheme: light;
+    /* set defaults */
     --brand: var(--brand-light);
     --text-1: var(--text-1-light);
     --text-2: var(--text-2-light);
@@ -53,16 +22,59 @@ import './modular-scale.css'
     --shadow-strength: var(--shadow-strength-light);
   }
 
-  [color-scheme='dark'] {
-    color-scheme: dark;
-    --brand: var(--brand-dark);
-    --text-1: var(--text-1-dark);
-    --text-2: var(--text-2-dark);
-    --surface-1: var(--surface-1-dark);
-    --surface-2: var(--surface-2-dark);
-    --surface-3: var(--surface-3-dark);
-    --surface-4: var(--surface-4-dark);
-    --surface-shadow: var(--surface-shadow-dark);
-    --shadow-strength: var(--shadow-strength-dark);
+  /* [class^="box"].invert {
+    filter: invert(100%);
+  }
+
+  [class^="box"] {
+    * {
+      color: inherit;
+      background-color: inherit;
+    }
+  } */
+  /* .myLayoutColors {
+    background-color: var(--surface-3);
+    color: var(--text-3);
+  } */
+  .gradient-text {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-1: var(--text-1-dark);
+      --text-2: var(--text-2-dark);
+      --surface-1: var(--surface-1-dark);
+      --surface-2: var(--surface-2-dark);
+      --surface-3: var(--surface-3-dark);
+      --surface-4: var(--surface-4-dark);
+      --surface-shadow: var(--surface-shadow-dark);
+      --shadow-strength: var(--shadow-strength-dark);
+
+      --brand: var(--brand-dark);
+      --border-color: var(--brand-dark);
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --text-1: var(--text-1-light);
+      --text-2: var(--text-2-light);
+      --surface-1: var(--surface-1-light);
+      --surface-2: var(--surface-2-light);
+      --surface-3: var(--surface-3-light);
+      --surface-4: var(--surface-4-light);
+      --surface-shadow: var(--surface-shadow-light);
+      --shadow-strength: var(--shadow-strength-light);
+
+      --brand: var(--brand-light);
+      --border-color: var(--brand-light);
+    }
+  }
+    body {
+    color: var(--text-3);
+    background-color:var(--surface-3);
   }
 </style>

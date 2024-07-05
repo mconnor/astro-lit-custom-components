@@ -1,9 +1,30 @@
 ---
-// import AstroNavigateSelect from '@components/AstroNavigateSelect.astro'
-
-import BaseLayout from '@layouts/BaseLayout.astro';
+// import { Box } from "@cc/index.ts";
+import Box from "@cc/Box/index.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home">
-	<h1>hello</h1>
-</BaseLayout>
+  <h1>some boxes</h1>
+  <Box padding="6px">
+    <Box borderWidth="4px"><h1>hi</h1></Box>
+    <Box invert padding="20px"
+      ><p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eligendi
+        doloribus voluptatibus, aliquam provident accusantium soluta incidunt
+        sit exercitationem illo ex excepturi consectetur porro explicabo hic
+        sapiente architecto beatae eaque!
+      </p>
+
+      <Box  borderWidth="var(--s00)" padding="var(--s2)"
+        ><p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+          eligendi doloribus voluptatibus, aliquam provident accusantium soluta
+          incidunt sit exercitationem illo ex excepturi consectetur porro
+          explicabo hic sapiente architecto beatae eaque!
+        </p></Box
+      >
+    </Box>
+  </Box></BaseLayout
+>
+

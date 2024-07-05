@@ -17,50 +17,47 @@ export class Cover extends LitElement {
   static styles = css`
     :host {
       display: flex;
-      flex-direction: row;
-      min-block-size: 100vh;
-      padding: '5px';
-      min-height: 100vh;
+      flex-direction: var(--my-flex-direction, row);
+      min-block-size: var(--my-min-height, 100vh);
+      padding: var(--my-space, '5px');
+      background-color: var(--my-bg, red);
     }
+    :host([noPad]) {
+      padding: 0;
+    }
+    ::slotted(centered) {
+      color: blue;
+    }
+    ::slotted(*) {
+      padding: 6px;
+      border: 1px solid black;
+    }
+    /* ::slotted(*) > * {
+      margin-block: var(--my-space, '5px');
+    }
+    ::slotted(*) > :first-child:not(main) {
+      margin-block-start: 0;
+    }
+    ::slotted(*) > :last-child:not(main) {
+      margin-block-end: 0;
+      background-color: red;
+    }
+    ::slotted(*) > main {
+      margin-block: auto;
+    } */
   `;
 
-  @property({ attribute: 'centered-element' })
-  accessor centered = 'h1';
-
-  @property({ attribute: 'space' })
-  accessor space = 'var(--s1)';
-
-  @property({ attribute: 'min-height' })
-  accessor minHeight = '100vh';
+  @property({ type: String })
+  centered: string = 'h1';
 
   @property({ type: Boolean, reflect: true })
   noPad: boolean = false;
 
   render() {
-    return html`<style>
-        ::slotted(*) {
-          padding: ${!this.noPad ? this.space : '0'};
-          /* min-height: ${!this.minHeight}; */
-        }
-        ::slotted(*) > * {
-          margin-block: ${this.space};
-        }
-        ::slotted(*) > :first-child:not(${this.centered}) {
-          margin-block-start: 0;
-        }
-        ::slotted(*) > :last-child:not(${this.centered}) {
-          margin-block-end: 0;
-        }
-        ::slotted(*) > ${this.centered} {
-          margin-block: auto;
-        }
-      </style>
-      <slot></slot>`;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'cover-l': Cover;
+    return html`
+      <slot name="bottom"></slot>
+      <slot></slot>
+      <slot name="top"></slot>
+    `;
   }
 }

@@ -1,19 +1,31 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
+  "include": [
+    "src"
+  ],
   "compilerOptions": {
-    "strictNullChecks": true,
-    "declaration": true,
-    "declarationMap": true,
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
     "verbatimModuleSyntax": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "useDefineForClassFields": false,
     "baseUrl": ".",
     "paths": {
       "@components/*": [
         "src/components/*"
       ],
+      "@cc/*": [
+        "src/lit-layout-components/*"
+      ],
       "@layouts/*": [
         "src/layouts/*"
+      ],
+      "@content/*": [
+        "src/content/*"
       ],
       "@assets/*": [
         "src/assets/*"
@@ -21,20 +33,14 @@
       "@styles/*": [
         "src/styles/*"
       ],
+      "@scripts/*": [
+        "src/scripts/*"
+      ],
       "@wc/*": [
-        "src/lit-layout-components/*"
+        "src/web-components/*"
       ]
-    }
-  },
-  "include": [
-    "src/**/*.d.ts",
-    "**/*.mjs",
-    "**/*.ts",
-    "**/*.js",
-    "src/**/*.astro",
-    "postcss.config.mjs"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }

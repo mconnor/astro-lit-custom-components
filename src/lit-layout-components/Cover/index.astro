@@ -1,28 +1,33 @@
 ---
-import type { RmUnitType } from '../Types';
-
 type Props = {
   centeredElement?: string; // h1
-  space?: RmUnitType; //"var(--s1)"
-  minHeight?: RmUnitType; //"100vh"
+  space?: string; //"var(--s1)"
+  minHeight?: string; //"100vh"
   noPad?: boolean; // false
   children: unknown;
 };
 
-const { centeredElement: centered, ...rest } = Astro.props;
+const { centeredElement: centered } = Astro.props;
 ---
 
-<cover-l centered={centered} {...rest}>
-  <slot />
+<cover-l centered={centered}>
+  <slot name="top" />
+  <slot name="middle" />
+  <slot name="bottom" />
 </cover-l>
 
-<script src="./Cover"></script>
+<script src="./Cover.js"></script>
 
 <style is:global>
   cover-l {
     display: flex;
     flex-direction: column;
-    min-block-size: 100vh;
-    padding: '5px';
+    min-block-size: 80vh;
+    padding: var(--s1);
+
+    --my-flex-direction: column;
+    --my-min-height: 100vh;
+    --my-space: var(--s1);
+    --my-pad: var(--s1);
   }
 </style>
