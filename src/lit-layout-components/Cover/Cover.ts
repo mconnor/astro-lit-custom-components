@@ -1,5 +1,5 @@
-import { html, css, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html, css, LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
 /**
  * @module cover-l
@@ -12,52 +12,64 @@ import { customElement, property } from 'lit/decorators.js';
  * @property {boolean} noPad=false Whether the spacing is also applied as padding to the container element
  */
 
-@customElement('cover-l')
+@customElement("cover-l")
 export class Cover extends LitElement {
-  static styles = css`
-    :host {
-      display: flex;
-      flex-direction: var(--my-flex-direction, row);
-      min-block-size: var(--my-min-height, 100vh);
-      padding: var(--my-space, '5px');
-      background-color: var(--my-bg, red);
-    }
-    :host([noPad]) {
-      padding: 0;
-    }
-    ::slotted(centered) {
-      color: blue;
-    }
-    ::slotted(*) {
-      padding: 6px;
-      border: 1px solid black;
-    }
-    /* ::slotted(*) > * {
-      margin-block: var(--my-space, '5px');
-    }
-    ::slotted(*) > :first-child:not(main) {
-      margin-block-start: 0;
-    }
-    ::slotted(*) > :last-child:not(main) {
-      margin-block-end: 0;
-      background-color: red;
-    }
-    ::slotted(*) > main {
-      margin-block: auto;
-    } */
-  `;
+  static styles = [
+    css`
+      :host {
+        display: flex;
+        flex-direction: column;
+        min-block-size: 100vh;
+      }
+    `,
+  ];
 
   @property({ type: String })
-  centered: string = 'h1';
+  accessor minHeight = "100vh";
 
-  @property({ type: Boolean, reflect: true })
-  noPad: boolean = false;
+  @property({ type: String })
+  accessor space = "var(--s1)";
+
+  @property({ type: Boolean })
+  accessor noPad = false;
 
   render() {
-    return html`
-      <slot name="bottom"></slot>
-      <slot></slot>
+    const noPadStyle = html`<style>
+      :host {
+        padding: 0;
+        min-height: ${this.minHeight};
+      }
+      ::slotted(*) {
+        margin-block: ${this.space};
+      }
+      ::slotted("top") > :first-child {
+        margin-block-start: 0;
+      }
+      ::slotted("bottom") > :last-child {
+        margin-block-end: 0;
+      }
+    </style> `;
+
+    const padStyle = html`<style>
+      :host {
+        padding: ${this.space};
+        min-height: ${this.minHeight};
+      }
+      ::slotted(*) {
+        margin-block: ${this.space};
+      }
+      ::slotted("top") > :first-child {
+        margin-block-start: 0;
+      }
+      ::slotted("bottom") > :last-child {
+        margin-block-end: 0;
+      }
+    </style> `;
+
+    return html`${this.noPad ? noPadStyle : padStyle}
+
       <slot name="top"></slot>
-    `;
+      <slot name="middle"></slot>
+      <slot name="bottom"></slot> `;
   }
 }

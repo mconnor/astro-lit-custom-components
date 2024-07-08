@@ -11,7 +11,7 @@
 // import Icon from './Icon/index.astro'
 
 import Box from "./Box/index.astro";
-// import Cover from "./Cover/index.astro";
+import Cover from "./Cover/index.astro";
 
 export {
   // Box,
@@ -25,6 +25,6 @@ export {
   // Grid,
   // Imposter,
   // Icon,
-  // Cover,
+  Cover,
   Box,
 };

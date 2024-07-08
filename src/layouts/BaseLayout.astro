@@ -1,10 +1,10 @@
 ---
-import GlobalStyle from "@styles/GlobalStyle.astro";
-import BaseHead from "@components/BaseHead.astro";
-// import Header from "@components/Header.astro";
-// import Footer from "@components/Footer.astro";
+import GlobalStyle from "@/styles/GlobalStyle.astro";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
-// import { Cover } from "@cc/index.js";
+// import { Cover } from "@/lit-layout-components/index.ts";
 
 interface Props {
   pageTitle?: string;
@@ -22,7 +22,7 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <BaseHead title={pageTitle} description={description} image={image} />
     <link rel="canonical" href={canonicalURL} />
@@ -30,6 +30,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
 
   <body>
-    <slot />
+
+<!-- <Cover>  -->
+    <Header slot="top"/>
+   <div slot="middle"> <slot /></div>
+    <Footer slot="bottom"/>
+  <!-- </Cover> -->
+
+
+
   </body>
 </html>

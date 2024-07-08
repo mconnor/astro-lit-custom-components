@@ -1,22 +1,22 @@
 ---
-type Props = {
-  centeredElement?: string; // h1
+interface Props {
+
   space?: string; //"var(--s1)"
   minHeight?: string; //"100vh"
   noPad?: boolean; // false
-  children: unknown;
-};
 
-const { centeredElement: centered } = Astro.props;
+}
+
+const props = Astro.props;
 ---
 
-<cover-l centered={centered}>
+<cover-l {...props}>
   <slot name="top" />
   <slot name="middle" />
   <slot name="bottom" />
 </cover-l>
 
-<script src="./Cover.js"></script>
+<script src="./Cover.ts"></script>
 
 <style is:global>
   cover-l {

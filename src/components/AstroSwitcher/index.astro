@@ -1,0 +1,50 @@
+---
+// interface Props {
+//   storedTheme?: string;
+// }
+
+// const { storedTheme = 'auto' } = Astro.props;
+---
+
+<astro-theme-switcher>
+  <form id="theme" data-select-theme>
+    <label>
+      Auto
+      <input type="radio" name="theme" value="auto" />
+    </label>
+    <label>
+      Light
+      <input type="radio" name="theme" value="light" />
+    </label>
+    <label>
+      Dark
+      <input type="radio" name="theme" value="dark" />
+    </label>
+    <label>
+      Dim
+      <input type="radio" name="theme" value="dim" />
+    </label>
+    <label>
+      Grape
+      <input type="radio" name="theme" value="grape" />
+    </label>
+    <label>
+      Choco
+      <input type="radio" name="theme" value="choco" />
+    </label>
+  </form>
+</astro-theme-switcher>
+
+<script src="./AstroSwitcher.ts"></script>
+
+<style>
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s0);
+    font-size: var(--font-size-0);
+  }
+  label {
+    padding-right: var(--s1);
+  }
+</style>

@@ -1,12 +1,9 @@
 {
   "extends": "astro/tsconfigs/base",
-  "include": [
-    "src"
-  ],
   "compilerOptions": {
     "verbatimModuleSyntax": true,
-    "experimentalDecorators": false, // default is false for TypeScript 5.0 and up
-    "useDefineForClassFields": true, // default is true when "target" is "ES2022" or higher
+    "experimentalDecorators": true, // default is false for TypeScript 5.0 and up
+    "useDefineForClassFields": false, // default is true when "target" is "ES2022" or higher
     "declaration": true,
     "lib": [
       "ESNext",
@@ -18,8 +15,12 @@
       "@/*": [
         "src/*"
       ],
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    }
+  },
+  "include": [
+    "src/**/*.astro",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "test/*.ts"
+  ]
 }

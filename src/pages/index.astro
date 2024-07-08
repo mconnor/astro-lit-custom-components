@@ -1,24 +1,24 @@
 ---
 // import { Box } from "@cc/index.ts";
-import Box from "@cc/Box/index.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import {Box} from "@/lit-layout-components/index.ts";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home">
-  <h1>some boxes</h1>
+  <Box borderWidth="4px"><h1>headline</h1></Box>
   <Box padding="6px">
-    <Box borderWidth="4px"><h1>hi</h1></Box>
-    <Box invert padding="20px"
+    <Box borderWidth="4px"><h2>h2</h2></Box>
+    <Box invert padding="2px"
       ><p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eligendi
+        top ipsum dolor sit amet consectetur adipisicing elit. Magni eligendi
         doloribus voluptatibus, aliquam provident accusantium soluta incidunt
         sit exercitationem illo ex excepturi consectetur porro explicabo hic
         sapiente architecto beatae eaque!
       </p>
 
-      <Box  borderWidth="var(--s00)" padding="var(--s2)"
+      <Box   borderWidth="var(--s00)" padding="var(--s2)"
         ><p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+          bottom ipsum dolor sit amet consectetur adipisicing elit. Magni
           eligendi doloribus voluptatibus, aliquam provident accusantium soluta
           incidunt sit exercitationem illo ex excepturi consectetur porro
           explicabo hic sapiente architecto beatae eaque!

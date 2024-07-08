@@ -5,8 +5,8 @@
 
   --size-conditional-5: clamp(0px, calc(100vw - 100%) * 1e5, var(--size-5));
 
-  --color-light: hsl(0 0% 80%);
-  --color-dark: hsl(0 0% 20%);
+  --my-bg-color: var(--surface-1);
+  --my-color: var(--text-1);
 
   /* light */
   --brand-light: var(--orange-12);
