@@ -5,40 +5,19 @@
   ],
   "compilerOptions": {
     "verbatimModuleSyntax": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": false, // default is false for TypeScript 5.0 and up
+    "useDefineForClassFields": true, // default is true when "target" is "ES2022" or higher
     "declaration": true,
     "lib": [
-      "ES2020",
+      "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
-    "useDefineForClassFields": false,
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
+      "@/*": [
+        "src/*"
       ],
-      "@cc/*": [
-        "src/lit-layout-components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@content/*": [
-        "src/content/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@scripts/*": [
-        "src/scripts/*"
-      ],
-      "@wc/*": [
-        "src/web-components/*"
-      ]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
