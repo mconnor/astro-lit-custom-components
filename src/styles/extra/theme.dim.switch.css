@@ -1,4 +1,4 @@
-:where([data-theme='dim'], .dim, .dim-theme) {
+:where([data-theme="dim"], .dim, .dim-theme) {
   color-scheme: dim;
 
   --link: var(--indigo-3);

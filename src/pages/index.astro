@@ -1,11 +1,10 @@
 ---
-// import { Box } from "@cc/index.ts";
-import {Box} from "@/lit-layout-components/index.ts";
+import Box from "@/lit-layout-components/Box/index.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="home">
-  <Box borderWidth="4px"><h1>headline</h1></Box>
+  <Box borderWidth="4px"><h1>mode= {import.meta.env.MODE}</h1></Box>
   <Box padding="6px">
     <Box borderWidth="4px"><h2>h2</h2></Box>
     <Box invert padding="2px"
@@ -16,7 +15,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         sapiente architecto beatae eaque!
       </p>
 
-      <Box   borderWidth="var(--s00)" padding="var(--s2)"
+      <Box borderWidth="var(--s00)" padding="var(--s2)"
         ><p>
           bottom ipsum dolor sit amet consectetur adipisicing elit. Magni
           eligendi doloribus voluptatibus, aliquam provident accusantium soluta
@@ -25,6 +24,5 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </p></Box
       >
     </Box>
-  </Box></BaseLayout
->
-
+  </Box>
+</BaseLayout>

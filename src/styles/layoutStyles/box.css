@@ -1,4 +1,4 @@
-[class^='box'] {
+[class^="box"] {
   /* color: var(--text-2);
   background-color: var(--surface-2); */
 
@@ -11,7 +11,7 @@
   }
 }
 
-[class^='box'].invert {
+[class^="box"].invert {
   filter: invert(100%);
 }
 

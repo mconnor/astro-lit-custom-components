@@ -1,4 +1,4 @@
-:where([data-theme='light'], .light, .light-theme) {
+:where([data-theme="light"], .light, .light-theme) {
   color-scheme: light;
 
   --brand: var(--brand--light);

@@ -1,4 +1,4 @@
-:where([data-theme='grape'], .grape, .grape-theme) {
+:where([data-theme="grape"], .grape, .grape-theme) {
   color-scheme: grape;
 
   --link: var(--indigo-3);

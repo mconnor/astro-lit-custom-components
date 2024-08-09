@@ -5,22 +5,11 @@
     "experimentalDecorators": true, // default is false for TypeScript 5.0 and up
     "useDefineForClassFields": false, // default is true when "target" is "ES2022" or higher
     "declaration": true,
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
+      "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src/**/*.astro",
-    "src/**/*.js",
-    "src/**/*.ts",
-    "test/*.ts"
-  ]
+  "include": ["*.config.*", "src"]
 }

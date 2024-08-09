@@ -1,10 +1,10 @@
 // @ts-check
-// import astroEslintParser from 'astro-eslint-parser';
+import astroParser from "astro-eslint-parser";
 import eslintPluginAstro from "eslint-plugin-astro";
 import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 import js from "@eslint/js";
-import markdown from "eslint-plugin-markdown";
+// import markdown from "eslint-plugin-markdown";
 import tseslint from "typescript-eslint";
 // import typescriptParser from '@typescript-eslint/parser';
 // import * as regexpPlugin from "eslint-plugin-regexp";
@@ -33,12 +33,34 @@ export default tseslint.config(
 
   {
     languageOptions: {
-      // ecmaVersion: "latest",
-      // sourceType: "module",
+      ecmaVersion: "latest",
+      sourceType: "module",
+      parserOptions: {
+        projectServices: true,
+
+        // For example, if you use a specific tsconfig.eslint.json for linting, you'd specify:
+        tsconfigRootDir: import.meta.dirname,
+        parser: tseslint.parser,
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
       globals: {
         ...globals.browser,
         ...globals.node,
       },
+    },
+  },
+  {
+    files: ["src/**/*.astro"],
+    ...tseslint.configs.disableTypeChecked,
+
+    languageOptions: {
+      parser: astroParser,
+    },
+
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
   {
@@ -97,6 +119,7 @@ export default tseslint.config(
   },
   {
     ignores: [
+      "my-custom-build-directory",
       "**/_*.astro",
       "**/temp.js",
       "config/*",
@@ -108,5 +131,5 @@ export default tseslint.config(
       "src/env.d.ts",
     ],
   },
-  eslintConfigPrettier // eslint-config-prettier last
+  eslintConfigPrettier, // eslint-config-prettier last
 );

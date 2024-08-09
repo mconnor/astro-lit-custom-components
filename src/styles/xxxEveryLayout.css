@@ -1,6 +1,6 @@
 /* Layouts */
 
-[class^='stack'] > * {
+[class^="stack"] > * {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -28,7 +28,7 @@
 
 /* end stack */
 
-[class^='box'] {
+[class^="box"] {
   color: var(--text-1);
   background-color: var(--surface-4);
 
@@ -41,7 +41,7 @@
   }
 }
 
-[class^='box'].invert {
+[class^="box"].invert {
   filter: invert(100%);
 }
 

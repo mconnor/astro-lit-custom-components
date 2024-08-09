@@ -32,9 +32,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <body>
 
 <!-- <Cover>  -->
-    <Header slot="top"/>
-   <div slot="middle"> <slot /></div>
-    <Footer slot="bottom"/>
+    <Header/> <div slot="middle">
+
+    <slot />
+
+
+    <Footer/>
   <!-- </Cover> -->
 
 

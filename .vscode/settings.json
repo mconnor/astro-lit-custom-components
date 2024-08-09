@@ -1,9 +1,9 @@
 {
+  "editor.formatOnSave": false,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
-    // turn it off for JS and JSX, we will do this via eslint
-    "[javascript][javascriptreact][typescript][typescriptreact]": {
-        "editor.formatOnPaste": false,
-        "editor.formatOnSave": false,
-        "editor.formatOnType": false
-    },
+    "editor.formatOnType": false
+  }
 }

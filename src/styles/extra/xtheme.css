@@ -1,4 +1,4 @@
-@import 'theme.light.css';
+@import "theme.light.css";
 
 /* prefers dark scheme */
 @media (--OSdark) {

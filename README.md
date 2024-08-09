@@ -1,7 +1,9 @@
 <<<<<<< HEAD
+
 # astro-lit-custom-components
-testing custom components for CSS layout
-=======
+
+# testing custom components for CSS layout
+
 # Astro + Lit Example
 
 ```sh
@@ -13,4 +15,5 @@ npm create astro@latest -- --template framework-lit
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/framework-lit/devcontainer.json)
 
 This example showcases Astro working with [Lit](https://lit.dev/).
->>>>>>> 92a0366 (first)
+
+> > > > > > > 92a0366 (first)

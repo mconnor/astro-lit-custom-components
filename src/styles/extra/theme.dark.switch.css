@@ -1,4 +1,4 @@
-:where([data-theme='dark'], .dark, .dark-theme) {
+:where([data-theme="dark"], .dark, .dark-theme) {
   color-scheme: dark;
 
   --brand: var(--brand--dark);

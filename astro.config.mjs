@@ -5,6 +5,7 @@ import { dev } from "astro";
 // https://astro.build/config
 export default defineConfig({
   // Enable Lit to support LitHTML components and templates.
+  outDir: "./my-custom-build-directory",
   integrations: [lit()],
   output: "static",
   site: "http://localhost:4321",

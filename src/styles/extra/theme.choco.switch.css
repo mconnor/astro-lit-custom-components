@@ -1,4 +1,4 @@
-:where([data-theme='choco'], .choco, .choco-theme) {
+:where([data-theme="choco"], .choco, .choco-theme) {
   color-scheme: choco;
 
   --link: var(--indigo-3);
